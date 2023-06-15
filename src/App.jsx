@@ -5,10 +5,8 @@ import ItemListContainer from './components/ItemListContainer';
 function App() {
   return (
     <ChakraProvider>
-      <>
         <NavBar />
         <ItemListContainer greetings={"Welcome!"} />
-      </>
     </ChakraProvider>
   );
 }
