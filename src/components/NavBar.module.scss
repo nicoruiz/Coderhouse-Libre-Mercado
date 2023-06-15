@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.navBar {
+    background-color: $primary-color;
+
+    a, span {
+        color: $secondary-color;
+    }
+}

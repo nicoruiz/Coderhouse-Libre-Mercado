@@ -1,0 +1,19 @@
+@import '../styles/variables.scss';
+
+.cartItem {
+    color: $secondary-color;
+}
+
+.cartNotification {
+    height: 22px;
+    width: 22px;
+    color: $white-color;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: small;
+    margin-left: -1rem;
+    margin-bottom: -2rem;
+    z-index: 1;
+}
