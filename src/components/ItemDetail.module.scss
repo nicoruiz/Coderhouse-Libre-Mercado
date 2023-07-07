@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+.detailContainer {
+    background-color: $background-color;
+    padding: 3rem 10rem 3rem 10rem;
+    min-height: 100vh;
+}
+
+.centeredContainer {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+}

@@ -2,8 +2,18 @@
 
 .navBar {
     background-color: $primary-color;
+    
+    ol {
+        justify-content: space-evenly;
+    }
 
     a, span {
         color: $secondary-color;
     }
+}
+
+.navBarSections {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
 }
