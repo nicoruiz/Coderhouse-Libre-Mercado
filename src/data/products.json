@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "title": "Tesla - Coche deportivo",
+        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/I6UTJTQH65DU7KBVPNJFZKCTIE.jpeg",
+        "description": "Coche deportivo de alta velocidad",
+        "price": 50000,
+        "stock": 10,
+        "category": "vehicles"
+    },
+    {
+        "id": 2,
+        "title": "Iphone 14 - Teléfono inteligente",
+        "image": "https://www.ventasrosario.com.ar/wp-content/uploads/2022/09/61XO4bORHUL._AC_SL1500_.jpg",
+        "description": "Teléfono inteligente con pantalla de alta resolución",
+        "price": 800,
+        "stock": 50,
+        "category": "electronic"
+    },
+    {
+        "id": 3,
+        "title": "1984 - Libro de ciencia ficción",
+        "image": "https://quelibroleo.com/images/libros/libro-1540892576.jpg",
+        "description": "Novela de ciencia ficción escrita por George Orwell",
+        "price": 20,
+        "stock": 20,
+        "category": "books"
+    },
+    {
+        "id": 4,
+        "title": "Motocicleta clásica",
+        "image": "https://motordigitalpress.com/wp-content/uploads/2022/12/moto-clasica.jpg",
+        "description": "Motocicleta clásica de colección",
+        "price": 15000,
+        "stock": 5,
+        "category": "vehicles"
+    },
+    {
+        "id": 5,
+        "title": "Televisor 4K",
+        "image": "https://images.fravega.com/f1000/d7ca24bf5639a7db78c31aa9fa963be8.jpg",
+        "description": "Televisor con resolución 4K y tecnología de vanguardia",
+        "price": 1200,
+        "stock": 15,
+        "category": "electronic"
+    },
+    {
+        "id": 6,
+        "title": "Libro de historia",
+        "image": "https://contentv2.tap-commerce.com//cover/large/9789501304732_1.jpg",
+        "description": "Libro que relata eventos históricos importantes",
+        "price": 25,
+        "stock": 30,
+        "category": "books"
+    },
+    {
+        "id": 7,
+        "title": "SUV familiar",
+        "image": "https://media.c5n.com/p/db8cbadb71bfb9c228eac7f83c0f302b/adjuntos/326/imagenes/000/149/0000149700/790x0/smart/jeep-avenger2jpg.jpg",
+        "description": "Vehículo espacioso y cómodo para la familia",
+        "price": 35000,
+        "stock": 8,
+        "category": "vehicles"
+    },
+    {
+        "id": 8,
+        "title": "Ipad - Tablet",
+        "image": "https://www.macstation.com.ar/img/productos/2458-1.jpg",
+        "description": "Tablet con pantalla táctil y múltiples funciones",
+        "price": 400,
+        "stock": 0,
+        "category": "electronic"
+    },
+    {
+        "id": 9,
+        "title": "Novela romántica",
+        "image": "https://www.clara.es/medio/2019/01/18/novelas-romanticas-lo-que-el-viento-se-llevo-margaret-mitchell_6a0a674c_1000x1500.jpg",
+        "description": "Novela romántica con una historia cautivadora",
+        "price": 15,
+        "stock": 25,
+        "category": "books"
+    },
+    {
+        "id": 10,
+        "title": "Bicicleta de montaña",
+        "image": "https://media.revistagq.com/photos/603df592054faa7026818520/master/w_1920,h_1440,c_limit/Roscoe7_21_28499_B_Portrait.jpg",
+        "description": "Bicicleta diseñada para recorridos en terrenos difíciles",
+        "price": 800,
+        "stock": 0,
+        "category": "vehicles"
+    },
+    {
+        "id": 11,
+        "title": "Macbook Air",
+        "image": "https://lidernotebooks.com.ar/wp-content/uploads/2022/08/Apple-MacBook-Air-M1-MGN93LLA-8GB-56156256GB_0000_aplo-macbok.jpg",
+        "description": "Laptop potente para tareas exigentes",
+        "price": 1200,
+        "stock": 10,
+        "category": "electronic"
+    },
+    {
+        "id": 12,
+        "title": "Libro de cocina",
+        "image": "https://i.ytimg.com/vi/Me66a-p80sY/maxresdefault.jpg",
+        "description": "Libro con recetas y consejos culinarios",
+        "price": 30,
+        "stock": 15,
+        "category": "books"
+    },
+    {
+        "id": 13,
+        "title": "Camioneta todoterreno",
+        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/3JHJYOIBFZHDZEZEAIDOULDDIM.jpg",
+        "description": "Camioneta versátil para aventuras al aire libre",
+        "price": 45000,
+        "stock": 5,
+        "category": "vehicles"
+    },
+    {
+        "id": 14,
+        "title": "Altavoz Bluetooth",
+        "image": "https://eloutput.com/wp-content/uploads/2021/06/altavoz-bluetooth-potente-5.jpg",
+        "description": "Altavoz inalámbrico con gran calidad de sonido",
+        "price": 100,
+        "stock": 30,
+        "category": "electronic"
+    },
+    {
+        "id": 15,
+        "title": "Novela de misterio",
+        "image": "https://www.educaciontrespuntocero.com/wp-content/uploads/2022/12/cuentos-completos-.jpg",
+        "description": "Libro con recetas y consejos culinarios",
+        "price": 38,
+        "stock": 15,
+        "category": "books"
+    }
+]
