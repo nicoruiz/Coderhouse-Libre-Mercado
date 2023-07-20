@@ -11,7 +11,7 @@ const useGetProduct = (productId) => {
             const product = data.find(x => x.id === parseInt(productId))
             setProduct(product)
             setIsLoading(false)
-        }, 2000);
+        }, 1000);
 
         return () => {
             clearTimeout(timeout)
