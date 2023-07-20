@@ -1,8 +1,8 @@
 import { useParams } from 'react-router';
 import useGetProducts from '../hooks/useGetProducts';
-import ItemList from './ItemList';
+import ItemList from '../components/ItemList';
 import styles from './ItemListContainer.module.scss';
-import { Box, Flex, Spinner } from '@chakra-ui/react';
+import { Box, Flex, Spinner, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 const ItemListContainer = ({ greetings }) => {
@@ -18,8 +18,8 @@ const ItemListContainer = ({ greetings }) => {
     }, [products, categoryId])
     return (
         <Box className={styles.itemListContainer}>
-            <Box>
-                {greetings}
+            <Box style={{ paddingBottom: '2rem' }}>
+                <Text color='teal' fontSize='3xl'>{greetings}</Text>
             </Box>
 
             <Flex direction="column">

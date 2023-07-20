@@ -1,17 +1,35 @@
 import { useParams } from 'react-router';
 import useGetProduct from '../hooks/useGetProduct';
-import Item from './Item';
+import Item from '../components/Item';
 import { Box, Button, Flex, Spinner } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import styles from './ItemDetail.module.scss';
+import styles from '../pages/ItemDetail.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
+import { useToast } from '@chakra-ui/react'
 
 const ItemDetail = () => {
-    const { id } = useParams();
+    const { id } = useParams()
     const [product, isLoading] = useGetProduct(id)
-    const navigate = useNavigate();
 
+    const { addToCart } = useContext(CartContext)
+
+    const navigate = useNavigate()
     const goBack = () => navigate(-1)
+
+    const toast = useToast()
+
+    const onAdd = (quantityToAdd) => {
+        addToCart(product, quantityToAdd)
+        navigate("/cart")
+        toast({
+            title: `Se agregó el producto ${product.title} al carrito.`,
+            status: 'success',
+            position: 'bottom-right',
+            isClosable: true,
+        })
+    }
 
     return (
 
@@ -34,7 +52,8 @@ const ItemDetail = () => {
                 <Box className={styles.centeredContainer}>
                     <Item
                         {...product}
-                        isDetailView={true}
+                        isDetailView
+                        onAdd={onAdd}
                     />
                 </Box>
             }

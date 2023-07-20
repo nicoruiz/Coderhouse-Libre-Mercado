@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import logo from '../logo-lm.png';
 import CartWidget from './CartWidget';
 import styles from './NavBar.module.scss';
@@ -8,6 +9,7 @@ import {
     BreadcrumbLink
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 const sections = [
     {
@@ -29,6 +31,8 @@ const sections = [
 ]
 
 const NavBar = () => {
+    const { isEmpty } = useContext(CartContext)
+
     return (
         <Breadcrumb className={styles.navBar} spacing=".5rem" separator={''}>
             <BreadcrumbLink as={RouterLink} to="/">
@@ -45,9 +49,8 @@ const NavBar = () => {
                 ))}
             </Box>
 
-
-            <BreadcrumbItem>
-                <CartWidget />
+            <BreadcrumbItem as={RouterLink} to={"/cart"}>
+                { !isEmpty() && <CartWidget /> }
             </BreadcrumbItem>
         </Breadcrumb>
     )

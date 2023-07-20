@@ -10,7 +10,7 @@ const useGetProducts = () => {
         const timeout = setTimeout(() => {
             setProducts(data)
             setIsLoading(false)
-        }, 2000);
+        }, 1000);
 
         return () => {
             clearTimeout(timeout)

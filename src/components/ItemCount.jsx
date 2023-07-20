@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Box, Button, HStack, Input } from '@chakra-ui/react';
-import styles from './ItemDetail.module.scss';
 
 const ItemCount = ({ stock, initial = 0, onAdd }) => {
     const [quantity, setQuantity] = useState(initial)
