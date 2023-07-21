@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Box, Button, HStack, Input } from '@chakra-ui/react';
+import { BsFillCartCheckFill } from "react-icons/bs";
 
-const ItemCount = ({ stock, initial = 0, onAdd }) => {
+const ItemCount = ({ stock, initial = 0, onAdd, onFinishBuying, finishBuying }) => {
     const [quantity, setQuantity] = useState(initial)
 
     const onQuantityBtnClickHandler = (action) => {
@@ -39,14 +40,25 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
                     +
                 </Button>
             </HStack>
-            <Button
-                isDisabled={disableAddBtn()}
-                onClick={onAddBtnClickHandler}
-                colorScheme='teal'
-                variant='solid'
-            >
-                Agregar al carrito
-            </Button>
+            {finishBuying
+                ? <Button
+                    onClick={onFinishBuying}
+                    colorScheme='orange'
+                    variant='solid'
+                    leftIcon={<BsFillCartCheckFill />}
+                >
+                    Finalizar compra
+                </Button>
+                :
+                <Button
+                    isDisabled={disableAddBtn()}
+                    onClick={onAddBtnClickHandler}
+                    colorScheme='teal'
+                    variant='solid'
+                >
+                    Agregar al carrito
+                </Button>
+            }
         </Box>
 
     )
