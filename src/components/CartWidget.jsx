@@ -5,11 +5,7 @@ import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 
 const CartWidget = () => {
-    const { cartList } = useContext(CartContext)
-
-    const totalQuantity = cartList.reduce(
-        (acc, product) => acc + product.quantity, 0
-    )
+    const { getTotalQuantity } = useContext(CartContext)
 
     return (
         <>
@@ -21,7 +17,7 @@ const CartWidget = () => {
                 fontSize='20px'
                 icon={<AiOutlineShoppingCart />}
             />
-            <span className={styles.cartNotification}>{totalQuantity}</span>
+            <span className={styles.cartNotification}>{getTotalQuantity()}</span>
         </>
     )
 }

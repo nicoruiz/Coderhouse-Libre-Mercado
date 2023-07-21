@@ -42,8 +42,16 @@ const CartContextProvider = ({ children }) => {
         setCartList(filteredList)
     }
 
+    const getTotalQuantity = () => cartList.reduce(
+        (acc, product) => acc + product.quantity, 0
+    )
+
+    const getTotalAmount = () => cartList.reduce(
+        (acc, product) => acc + (product.price * product.quantity), 0
+    )
+
     return (
-        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem, isEmpty }}>
+        <CartContext.Provider value={{ cartList, addToCart, clear, deleteItem, isEmpty, getTotalQuantity, getTotalAmount }}>
             {children}
         </CartContext.Provider>
     )

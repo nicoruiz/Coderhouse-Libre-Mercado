@@ -2,9 +2,14 @@ import { Card, Image, CardBody, CardFooter, Stack, Heading, Text, Divider, Butto
 import ItemCount from './ItemCount';
 import { Link as RouterLink } from 'react-router-dom';
 
-const Item = ({ id, title, image, description, price, stock, isDetailView = false, onAdd }) => {
+const Item = ({ id, title, image, description, price, stock, isDetailView = false, onAdd, onFinishBuying, finishBuying }) => {
     return (
-        <Card maxW={isDetailView ? 'lg' : 'xs'}>
+        <Card 
+            maxW={isDetailView ? 'lg' : 'xs'}
+            boxShadow='md' 
+            rounded='md' 
+            bg='white'
+        >
             <CardBody style={{ minWidth: '15rem' }}>
                 <AspectRatio ratio={4 / 3}>
                     <Image
@@ -32,6 +37,8 @@ const Item = ({ id, title, image, description, price, stock, isDetailView = fals
                             stock={stock}
                             initial={1}
                             onAdd={onAdd}
+                            onFinishBuying={onFinishBuying}
+                            finishBuying={finishBuying}
                         />
                         :
                         <Button
