@@ -41,7 +41,7 @@ const NavBar = () => {
 
             <Box className={styles.navBarSections}>
                 {sections.map((section) => (
-                    <BreadcrumbItem>
+                    <BreadcrumbItem key={section.name}>
                         <BreadcrumbLink as={RouterLink} to={section.path}>
                             {section.name}
                         </BreadcrumbLink>

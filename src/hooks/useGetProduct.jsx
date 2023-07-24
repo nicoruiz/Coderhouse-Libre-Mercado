@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react';
-import data from "../data/products.json";
+import { getDocumentFromCollectionById } from '../data/firestoreService';
 
 const useGetProduct = (productId) => {
     const [isLoading, setIsLoading] = useState(true)
     const [product, setProduct] = useState()
 
     useEffect(() => {
-        setIsLoading(true)
-        const timeout = setTimeout(() => {
-            const product = data.find(x => x.id === parseInt(productId))
-            setProduct(product)
-            setIsLoading(false)
-        }, 1000);
+        getProductById()
+    }, [])
 
-        return () => {
-            clearTimeout(timeout)
-        }
-    }, [productId])
+    const getProductById = async () => {
+        setIsLoading(true)
+        const product = await getDocumentFromCollectionById("products", productId)
+        setIsLoading(false)
+        setProduct(product)
+    }
 
     return [product, isLoading];
 }
