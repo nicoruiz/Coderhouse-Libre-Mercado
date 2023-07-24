@@ -1,21 +1,30 @@
 import { useState, useEffect } from 'react';
-import data from "../data/products.json";
+import { getAllDocumentsFromCollection, getDocumentsFromCollectionByCategory } from '../data/firestoreService';
 
-const useGetProducts = () => {
+const useGetProducts = (categoryId) => {
     const [isLoading, setIsLoading] = useState(true)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        setIsLoading(true)
-        const timeout = setTimeout(() => {
-            setProducts(data)
-            setIsLoading(false)
-        }, 1000);
+        if (categoryId)
+            getProductsByCategory()
+        else 
+            getAllProducts()
+    }, [categoryId])
 
-        return () => {
-            clearTimeout(timeout)
-        }
-    }, [])
+    const getAllProducts = async () => {
+        setIsLoading(true)
+        const products = await getAllDocumentsFromCollection("products")
+        setIsLoading(false)
+        setProducts(products)
+    }
+
+    const getProductsByCategory = async () => {
+        setIsLoading(true)
+        const products = await getDocumentsFromCollectionByCategory("products", categoryId)
+        setIsLoading(false)
+        setProducts(products)
+    }
 
     return [products, isLoading];
 }

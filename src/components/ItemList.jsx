@@ -5,9 +5,8 @@ const ItemList = ({ products }) => {
     return (
         <Flex flexWrap="wrap">
             {products.map((product) => (
-                <Box width="25%" p={2}>
+                <Box key={product.id} width="25%" p={2}>
                     <Item
-                        key={product.id}
                         {...product}
                     />
                 </Box>
