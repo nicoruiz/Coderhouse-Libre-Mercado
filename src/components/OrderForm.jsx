@@ -1,4 +1,4 @@
-import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, FormControl, FormLabel, Input, ModalFooter, Box, Spinner } from "@chakra-ui/react"
+import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, FormControl, FormLabel, Input, ModalFooter, Spinner } from "@chakra-ui/react"
 import React from "react"
 import { useFormik } from "formik";
 
@@ -77,7 +77,7 @@ const OrderForm = ({ isOpen, onClose, onSubmit, isLoadingOrder }) => {
                                 ? <Spinner size='lg' />
                                 : <>
                                     <Button type="submit" colorScheme='teal' variant='solid' mr={3}>
-                                        Confirmar compra
+                                        Confirmar orden
                                     </Button>
                                     <Button onClick={onClose}>Cancelar</Button>
                                 </>

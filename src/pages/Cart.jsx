@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import styles from '../pages/ItemDetail.module.scss';
-import { Box, Button, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, useDisclosure } from "@chakra-ui/react";
 import CartItem from "../components/CartItem";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import OrderForm from "../components/OrderForm";
 import { addDocToCollection } from "../data/firestoreService";
 import { serverTimestamp } from "firebase/firestore";
 import OrderGeneratedAlert from "../components/OrderGeneratedAlert";
+import EmptyCart from "../components/EmptyCart";
 
 const Cart = () => {
     const { cartList, isEmpty, getTotalAmount, clearCart } = useContext(CartContext)
@@ -91,16 +92,8 @@ const Cart = () => {
                     style={{ display: 'grid', padding: '1rem 5rem 0rem 5rem', gap: '2rem' }}
                 >
                     {isEmpty()
-                        ? <Box boxSize='sm' style={{ textAlign: 'center' }}>
-                            <Text color='teal' fontSize='2xl'>Tu carrito de compra está vacío</Text>
-                            <Image
-                                src='https://cdn-icons-png.flaticon.com/512/2037/2037457.png'
-                                alt='empty'
-                                borderRadius='lg'
-                            />
-                        </Box>
-                        :
-                        <>
+                        ? <EmptyCart />
+                        : <>
                             <Box style={{ display: 'flex', justifyContent: 'space-around' }}>
                                 <Text color='teal' fontSize='2xl' style={{ textAlign: 'center' }}>
                                     Total de tu compra: ${getTotalAmount()}
@@ -110,7 +103,7 @@ const Cart = () => {
                                     variant='solid'
                                     onClick={continueBuying}
                                 >
-                                    Iniciar compra
+                                    Confirmar compra
                                 </Button>
                             </Box>
                             {
