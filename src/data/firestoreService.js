@@ -1,4 +1,4 @@
-import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs, doc, getDoc, addDoc } from "firebase/firestore";
 import { db } from "../data/firebase";
 
 export const getAllDocumentsFromCollection = async (collectionName) => {
@@ -15,7 +15,7 @@ export const getDocumentFromCollectionById = async (collectionName, id) => {
         id: docSnap.id,
         ...docSnap.data()
     }
-    console.log("Document:", document);
+
     return document
 }
 
@@ -24,8 +24,14 @@ export const getDocumentsFromCollectionByCategory = async (collectionName, categ
     const querySnapshot = await getDocs(q);
     
     const documents = mapToFullDocument(querySnapshot);
-    console.log(documents)
+
     return documents;
+}
+
+export const addDocToCollection = async (collectionName, document) => {
+    const docRef = await addDoc(collection(db, collectionName), document);
+
+    return docRef.id;
 }
 
 const mapToFullDocument = (querySnapshot) => {

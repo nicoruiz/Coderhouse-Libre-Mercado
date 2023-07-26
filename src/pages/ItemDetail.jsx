@@ -22,14 +22,26 @@ const ItemDetail = () => {
     const toast = useToast()
 
     const onAdd = (quantityToAdd) => {
-        addToCart(product, quantityToAdd)
-        setFinishBuying(true)
-        toast({
-            title: `Se agregó el producto ${product.title} al carrito.`,
-            status: 'success',
-            position: 'bottom-right',
-            isClosable: true,
-        })
+        const productAdded = addToCart(product, quantityToAdd)
+
+        if (productAdded) {
+            setFinishBuying(true)
+            toast({
+                title: `Se agregó el producto ${product.title} al carrito.`,
+                status: 'success',
+                position: 'bottom-right',
+                isClosable: true,
+            })
+        }
+        else {
+            toast({
+                title: `Stock insuficiente. No es posible agregar el producto ${product.title} al carrito.`,
+                status: 'error',
+                position: 'bottom-right',
+                isClosable: true,
+            })
+        }
+
     }
 
     const goToCart = () => {
