@@ -54,8 +54,8 @@ const CartItem = ({ id, title, image, description, price, quantity }) => {
 
                     <Divider orientation='vertical' />
 
-                    <Text color='teal' fontSize='2xl'>
-                        {quantity} unidad/es
+                    <Text color='teal' fontSize='lg'>
+                        {quantity} u.
                     </Text>
 
                     <Divider orientation='vertical' />
